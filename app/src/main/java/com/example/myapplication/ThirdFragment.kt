@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentThirdBinding
 
@@ -32,22 +33,71 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // crea un número aleatorio del 1 al 2, y según que resultado salga, realiza una parte de la condición
+
         val pago=(0 until 2).random()
+        val bundle= bundleOf("param1" to "Pago autorizado: "+pago.toString())
+        /*
         if(pago==1){
             // cuando se pulsa el botón se realiza la navegación indicada por su id
             binding.buttonThird.setOnClickListener {
-                findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment)
+                findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
             }
         }else{
             // cuando se pulsa el botón se realiza la navegación indicada por su id
             binding.buttonThird.setOnClickListener {
-                findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment)
+                findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
             }
         }
-    }
-    // cuando el fragmento se cierra
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
+         */
+        binding.us.setVisibility(View.INVISIBLE)
+        binding.usRe.setVisibility(View.INVISIBLE)
+        binding.cla.setVisibility(View.INVISIBLE)
+        binding.claRe.setVisibility(View.INVISIBLE)
+        binding.op1.setOnClickListener{
+            if(binding.op1.isChecked){
+                binding.us.setVisibility(View.VISIBLE)
+                binding.usRe.setVisibility(View.VISIBLE)
+                binding.cla.setVisibility(View.VISIBLE)
+                binding.claRe.setVisibility(View.VISIBLE)
+                val textoUs= binding.usRe.getText().toString()
+                val textoCla= binding.claRe.getText().toString()
+                if (!textoUs.equals("") or !textoCla.equals("")){
+                    binding.buttonThird.setOnClickListener {
+                        findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
+                    }
+                }
+                else{
+                    binding.buttonThird.setOnClickListener {
+                        findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
+                    }
+                }
+
+            }
+            else{
+                binding.us.setVisibility(View.INVISIBLE)
+                binding.usRe.setVisibility(View.INVISIBLE)
+                binding.cla.setVisibility(View.INVISIBLE)
+                binding.claRe.setVisibility(View.INVISIBLE)
+
+            }
+        }
+        binding.op2.setOnClickListener{
+            if(binding.op2.isChecked){
+                binding.us.setVisibility(View.INVISIBLE)
+                binding.usRe.setVisibility(View.INVISIBLE)
+                binding.cla.setVisibility(View.INVISIBLE)
+                binding.claRe.setVisibility(View.INVISIBLE)
+                binding.buttonThird.setOnClickListener {
+                    findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
+                }
+
+            }
+        }
+}
+// cuando el fragmento se cierra
+override fun onDestroyView() {
+    super.onDestroyView()
+    _binding = null
+}
 }

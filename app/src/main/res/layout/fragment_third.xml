@@ -3,17 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background= "@color/purple_200"
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
+    <EditText
+        android:id="@+id/claRe"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toEndOf="@+id/cla"
+        app:layout_constraintTop_toBottomOf="@+id/usRe"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <TextView
+        android:id="@+id/cla"
+        android:layout_width="74dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="52dp"
+        android:text="Clave:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/claRe" />
+
+    <EditText
+        android:id="@+id/usRe"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/us"
+        app:layout_constraintTop_toBottomOf="@+id/radio" />
+
+    <TextView
+        android:id="@+id/us"
+        android:layout_width="74dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="60dp"
+        android:text="Usuario:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/usRe" />
+
     <TextView
         android:id="@+id/textview_third"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/fragment3"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@id/button_third"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +72,41 @@
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="125dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_third" />
+        app:layout_constraintTop_toBottomOf="@+id/textview_third">
+
+        <RadioButton
+            android:id="@+id/op1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PayPal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/op2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarjeta Débito"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="92dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

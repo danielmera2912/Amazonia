@@ -32,8 +32,15 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // cuando se pulsa el botón se realiza la navegación indicada por su id
+        var producto= "Sin producto"
+        binding.product1.setOnClickListener{
+            producto= "Ordenador de sobremesa"
+        }
+        binding.product1.setOnClickListener{
+            producto= "Ordenador portátil"
+        }
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,producto)
         }
     }
     // cuando el fragmento se cierra

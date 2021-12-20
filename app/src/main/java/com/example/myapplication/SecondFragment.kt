@@ -11,6 +11,7 @@ import com.example.myapplication.databinding.FragmentSecondBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+private const val ARG_PRODUCTO= "producto"
 class SecondFragment : Fragment() {
 
     private var _binding: FragmentSecondBinding? = null

@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <argument
+            android:name="producto"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -55,5 +58,8 @@
             android:id="@+id/action_fourthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment"
             app:popUpTo="@id/FirstFragment" />
+        <argument
+            android:name="param1"
+            app:argType="string" />
     </fragment>
 </navigation>
