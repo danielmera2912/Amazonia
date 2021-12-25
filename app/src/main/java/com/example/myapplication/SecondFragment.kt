@@ -11,15 +11,22 @@ import com.example.myapplication.databinding.FragmentSecondBinding
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-private const val ARG_PRODUCTO= "producto"
+private const val ARG_PRODUCTO= "param2"
 class SecondFragment : Fragment() {
-
+    private var param2: String? = null
     private var _binding: FragmentSecondBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
+
     // cuando el fragmento se crea
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param2 = it.getString(ARG_PRODUCTO)
+        }
+    }
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,6 +39,7 @@ class SecondFragment : Fragment() {
     // cuando el fragmento se visualiza
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.pedido2.setText(param2)
 // cuando se pulsa el botón se realiza la navegación indicada por su id
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
