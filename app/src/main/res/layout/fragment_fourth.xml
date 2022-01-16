@@ -31,12 +31,13 @@
 
     <TextView
         android:id="@+id/pedido"
-        android:layout_width="212dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="230dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/button_fourth"
         app:layout_constraintEnd_toEndOf="@+id/textview_fourth"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="@+id/textview_fourth"
         app:layout_constraintTop_toBottomOf="@+id/textview_fourth"
         app:layout_constraintVertical_bias="1.0" />

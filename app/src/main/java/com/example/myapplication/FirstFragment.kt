@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.MainActivity.Companion.producto
 import com.example.myapplication.databinding.FragmentFirstBinding
 
 /**
@@ -33,15 +34,15 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // cuando se pulsa el botón se realiza la navegación indicada por su id
-        var producto=  bundleOf("param2" to "Sin producto")
+        //var producto=  bundleOf("param2" to "Sin producto")
         binding.product1.setOnClickListener{
-            producto= bundleOf("param2" to "Ordenador de sobremesa")
+            producto.add(binding.product1.text as String)
         }
         binding.product2.setOnClickListener{
-            producto= bundleOf("param2" to "Ordenador portátil")
+            producto.add(binding.product2.text as String)
         }
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,producto)
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
     // cuando el fragmento se cierra

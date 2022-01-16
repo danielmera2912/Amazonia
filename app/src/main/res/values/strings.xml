@@ -9,8 +9,17 @@
     <string name="inicio">Inicio</string>
 
     <string name="fragment1">Selección de productos</string>
+    <string name="product1">Ordenador de sobremesa</string>
+    <string name="product2">Ordenador portátil</string>
     <string name="fragment2">Datos de entrega</string>
+    <string name="dato1">Nombre...</string>
+    <string name="dato2">Dirección...</string>
     <string name="fragment3">Selección de método de pago</string>
+    <string name="op1">PayPal</string>
+    <string name="op2">Tarjeta Débito</string>
+    <string name="datoR1">IBAN:</string>
+    <string name="datoR2">Usuario:</string>
+    <string name="datoR3">Clave:</string>
     <string name="fragment4">Pedido realizado</string>
     <string name="fragment5">Error en pago</string>
     <!-- TODO: Remove or change this placeholder text -->

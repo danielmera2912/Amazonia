@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
+    <TextView
+        android:id="@+id/iban"
+        android:layout_width="74dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="60dp"
+        android:text="@string/datoR1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/usRe" />
+
     <EditText
         android:id="@+id/claRe"
         android:layout_width="211dp"
@@ -26,7 +35,7 @@
         android:layout_width="74dp"
         android:layout_height="34dp"
         android:layout_marginStart="52dp"
-        android:text="Clave:"
+        android:text="@string/datoR3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/claRe" />
 
@@ -43,12 +52,26 @@
         app:layout_constraintStart_toEndOf="@+id/us"
         app:layout_constraintTop_toBottomOf="@+id/radio" />
 
+    <EditText
+        android:id="@+id/ibanRe"
+        android:layout_width="211dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="96dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/us"
+        app:layout_constraintTop_toBottomOf="@+id/radio" />
+
     <TextView
         android:id="@+id/us"
         android:layout_width="74dp"
         android:layout_height="34dp"
         android:layout_marginStart="60dp"
-        android:text="Usuario:"
+        android:layout_marginTop="24dp"
+        android:text="@string/datoR2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/usRe" />
 
@@ -89,7 +112,7 @@
             android:id="@+id/op1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PayPal"
+            android:text="@string/op1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -97,7 +120,7 @@
             android:id="@+id/op2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tarjeta Débito"
+            android:text="@string/op2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </RadioGroup>

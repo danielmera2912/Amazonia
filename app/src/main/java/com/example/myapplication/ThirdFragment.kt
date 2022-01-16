@@ -54,12 +54,17 @@ class ThirdFragment : Fragment() {
         binding.usRe.setVisibility(View.INVISIBLE)
         binding.cla.setVisibility(View.INVISIBLE)
         binding.claRe.setVisibility(View.INVISIBLE)
+
+        binding.iban.setVisibility(View.INVISIBLE)
+        binding.ibanRe.setVisibility(View.INVISIBLE)
         binding.op1.setOnClickListener{
             if(binding.op1.isChecked){
                 binding.us.setVisibility(View.VISIBLE)
                 binding.usRe.setVisibility(View.VISIBLE)
                 binding.cla.setVisibility(View.VISIBLE)
                 binding.claRe.setVisibility(View.VISIBLE)
+                binding.iban.setVisibility(View.INVISIBLE)
+                binding.ibanRe.setVisibility(View.INVISIBLE)
                 val textoUs= binding.usRe.getText().toString()
                 val textoCla= binding.claRe.getText().toString()
                 if (!textoUs.equals("") or !textoCla.equals("")){
@@ -75,6 +80,8 @@ class ThirdFragment : Fragment() {
 
             }
             else{
+                binding.iban.setVisibility(View.VISIBLE)
+                binding.ibanRe.setVisibility(View.VISIBLE)
                 binding.us.setVisibility(View.INVISIBLE)
                 binding.usRe.setVisibility(View.INVISIBLE)
                 binding.cla.setVisibility(View.INVISIBLE)
@@ -84,6 +91,8 @@ class ThirdFragment : Fragment() {
         }
         binding.op2.setOnClickListener{
             if(binding.op2.isChecked){
+                binding.iban.setVisibility(View.VISIBLE)
+                binding.ibanRe.setVisibility(View.VISIBLE)
                 binding.us.setVisibility(View.INVISIBLE)
                 binding.usRe.setVisibility(View.INVISIBLE)
                 binding.cla.setVisibility(View.INVISIBLE)

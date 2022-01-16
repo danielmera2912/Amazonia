@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.MainActivity.Companion.direccionD
+import com.example.myapplication.MainActivity.Companion.nombreD
+import com.example.myapplication.MainActivity.Companion.producto
 import com.example.myapplication.databinding.FragmentFourthBinding
 
 /**
@@ -40,7 +43,7 @@ class FourthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // cuando se pulsa el botón se realiza la navegación indicada por su id
-        binding.pedido.setText(param1)
+        binding.pedido.setText("Producto: "+producto+", para la dirección: "+direccionD+", consta a este nombre: "+nombreD)
         binding.buttonFourth.setOnClickListener {
             findNavController().navigate(R.id.action_fourthFragment_to_FirstFragment)
         }
