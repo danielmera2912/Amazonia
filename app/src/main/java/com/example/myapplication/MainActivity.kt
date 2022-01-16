@@ -14,7 +14,7 @@ import android.widget.*
 import com.example.myapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     companion object {
-        var producto: MutableList<String> = mutableListOf("")
+        var producto =  mutableMapOf<Int, String>()
         var nombreD: String = ""
         var direccionD: String = ""
     }

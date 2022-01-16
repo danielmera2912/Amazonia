@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import android.widget.Toast
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.MainActivity.Companion.producto
 import com.example.myapplication.databinding.FragmentFirstBinding
@@ -36,13 +37,23 @@ class FirstFragment : Fragment() {
         // cuando se pulsa el botón se realiza la navegación indicada por su id
         //var producto=  bundleOf("param2" to "Sin producto")
         binding.product1.setOnClickListener{
-            producto.add(binding.product1.text as String)
+            producto.put(1500,binding.product1.text.toString())
+            //producto.add(binding.product1.text as String)
         }
         binding.product2.setOnClickListener{
-            producto.add(binding.product2.text as String)
+            producto.put(2500,binding.product2.text.toString())
+            //producto.add(binding.product2.text as String)
         }
         binding.buttonFirst.setOnClickListener {
+            if (!binding.product1.isChecked && !binding.product2.isChecked ) {
+                Toast.makeText(
+                    applicationContext,
+                    "Debe seleccionar al menos un producto",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            }
         }
     }
     // cuando el fragmento se cierra

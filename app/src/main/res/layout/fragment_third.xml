@@ -20,21 +20,20 @@
         android:id="@+id/claRe"
         android:layout_width="211dp"
         android:layout_height="41dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toEndOf="@+id/cla"
         app:layout_constraintTop_toBottomOf="@+id/usRe"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/cla"
         android:layout_width="74dp"
         android:layout_height="34dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="60dp"
         android:text="@string/datoR3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/claRe" />
@@ -43,26 +42,22 @@
         android:id="@+id/usRe"
         android:layout_width="211dp"
         android:layout_height="41dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/us"
         app:layout_constraintTop_toBottomOf="@+id/radio" />
 
     <EditText
         android:id="@+id/ibanRe"
         android:layout_width="211dp"
         android:layout_height="41dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/us"
         app:layout_constraintTop_toBottomOf="@+id/radio" />
 
     <TextView
@@ -70,10 +65,9 @@
         android:layout_width="74dp"
         android:layout_height="34dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="24dp"
         android:text="@string/datoR2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/usRe" />
+        app:layout_constraintTop_toTopOf="@+id/ibanRe" />
 
     <TextView
         android:id="@+id/textview_third"

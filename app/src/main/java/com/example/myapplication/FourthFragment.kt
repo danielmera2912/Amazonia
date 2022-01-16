@@ -43,7 +43,11 @@ class FourthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // cuando se pulsa el botón se realiza la navegación indicada por su id
-        binding.pedido.setText("Producto: "+producto+", para la dirección: "+direccionD+", consta a este nombre: "+nombreD)
+        var mensaje:String=""
+        for ((precio, nombre) in producto) {
+            mensaje += nombre + "a" + precio +"€"+ "\n"
+        }
+        binding.pedido.setText("Producto: "+mensaje+", para la dirección: "+direccionD+", consta a este nombre: "+nombreD)
         binding.buttonFourth.setOnClickListener {
             findNavController().navigate(R.id.action_fourthFragment_to_FirstFragment)
         }
