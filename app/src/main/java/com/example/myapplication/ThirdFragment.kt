@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -65,9 +66,13 @@ class ThirdFragment : Fragment() {
                 binding.claRe.setVisibility(View.VISIBLE)
                 binding.iban.setVisibility(View.INVISIBLE)
                 binding.ibanRe.setVisibility(View.INVISIBLE)
+                binding.buttonThird.setOnClickListener {
+                    findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
+                }
+                /*
                 val textoUs= binding.usRe.getText().toString()
                 val textoCla= binding.claRe.getText().toString()
-                if (!textoUs.equals("") or !textoCla.equals("")){
+                if (textoUs.isNullOrBlank() or textoCla.isNullOrBlank()){
                     binding.buttonThird.setOnClickListener {
                         findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
                     }
@@ -77,6 +82,8 @@ class ThirdFragment : Fragment() {
                         findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
                     }
                 }
+                */
+
 
             }
             else{

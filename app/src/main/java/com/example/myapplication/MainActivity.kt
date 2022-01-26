@@ -9,12 +9,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.*
 import com.example.myapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     companion object {
-        var producto =  mutableMapOf<Int, String>()
+        var producto =  mutableMapOf<String, Double>()
         var nombreD: String = ""
         var direccionD: String = ""
     }
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.AboutFragment -> true
             else -> super.onOptionsItemSelected(item)
         }
     }

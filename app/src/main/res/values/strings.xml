@@ -24,4 +24,7 @@
     <string name="fragment5">Error en pago</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_about">About</string>
+    <string name="about">About</string>
+    <string name="prod1">%s</string>
 </resources>
