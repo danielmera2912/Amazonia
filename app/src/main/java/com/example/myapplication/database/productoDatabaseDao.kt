@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
 package com.example.myapplication.database
 
 import androidx.lifecycle.LiveData
@@ -26,10 +25,10 @@ import androidx.room.Update
  * Defines methods for using the SleepNight class with Room.
  */
 @Dao
-interface clientesDatabaseDao {
+interface productoDatabaseDao {
 
     @Insert
-    suspend fun insert(cli: clientes)
+    suspend fun insert(pro: producto)
 
     /**
      * When updating a row with a value already set in a column,
@@ -38,22 +37,22 @@ interface clientesDatabaseDao {
      * @param night new value to write
      */
     @Update
-    suspend fun update(cli: clientes)
+    suspend fun update(pro: producto)
 
     /**
      * Selects and returns the row that matches the supplied start time, which is our key.
      *
      * @param key startTimeMilli to match
      */
-    @Query("SELECT * from clientes WHERE nombre = :key")
-    suspend fun get(key: Long): clientes?
+    @Query("SELECT * from producto WHERE nombre = :key")
+    suspend fun get(key: Long): producto?
 
     /**
      * Deletes all values from the table.
      *
      * This does not delete the table, only its contents.
      */
-    @Query("DELETE FROM clientes")
+    @Query("DELETE FROM producto")
     suspend fun clear()
 
     /**
@@ -61,15 +60,14 @@ interface clientesDatabaseDao {
      *
      * sorted by start time in descending order.
      */
-    @Query("SELECT * FROM clientes ORDER BY nombre DESC")
-    fun getAllNights(): LiveData<List<clientes>>
+    @Query("SELECT * FROM producto ORDER BY nombre DESC")
+    fun getAllNights(): LiveData<List<producto>>
 
     /**
      * Selects and returns the latest night.
      */
-    @Query("SELECT * FROM clientes ORDER BY nombre DESC LIMIT 1")
-    suspend fun getTonight(): clientes?
+    @Query("SELECT * FROM producto ORDER BY nombre DESC LIMIT 1")
+    suspend fun getProducto(): producto?
 
 }
 
-*/

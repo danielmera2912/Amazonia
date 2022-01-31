@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
+
 package com.example.myapplication.database
 
 import android.content.Context
@@ -29,13 +29,13 @@ import androidx.room.RoomDatabase
  * This pattern is pretty much the same for any database,
  * so you can reuse it.
  */
-@Database(entities = [clientes::class], version = 1, exportSchema = false)
-abstract class clientesDataBase : RoomDatabase() {
+@Database(entities = [producto::class], version = 1, exportSchema = false)
+abstract class productoDataBase : RoomDatabase() {
 
     /**
      * Connects the database to the DAO.
      */
-    abstract val clientesDataBase: clientesDatabaseDao
+    abstract val productoDataBase: productoDatabaseDao
 
     /**
      * Define a companion object, this allows us to add functions on the SleepDatabase class.
@@ -54,7 +54,7 @@ abstract class clientesDataBase : RoomDatabase() {
          *  thread to shared data are visible to other threads.
          */
         @Volatile
-        private var INSTANCE: clientesDataBase? = null
+        private var INSTANCE: productoDataBase? = null
 
         /**
          * Helper function to get the database.
@@ -73,7 +73,7 @@ abstract class clientesDataBase : RoomDatabase() {
          *
          * @param context The application context Singleton, used to get access to the filesystem.
          */
-        fun getInstance(context: Context): clientesDataBase {
+        fun getInstance(context: Context): productoDataBase {
             // Multiple threads can ask for the database at the same time, ensure we only initialize
             // it once by using synchronized. Only one thread may enter a synchronized block at a
             // time.
@@ -84,16 +84,16 @@ abstract class clientesDataBase : RoomDatabase() {
                 // If instance is `null` make a new database instance.
                 if (instance == null) {
                     instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            clientesDataBase::class.java,
-                            "cliente_history_database"
+                        context.applicationContext,
+                        productoDataBase::class.java,
+                        "cliente_history_database"
                     )
-                            // Wipes and rebuilds instead of migrating if no Migration object.
-                            // Migration is not part of this lesson. You can learn more about
-                            // migration with Room in this blog post:
-                            // https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
-                            .fallbackToDestructiveMigration()
-                            .build()
+                        // Wipes and rebuilds instead of migrating if no Migration object.
+                        // Migration is not part of this lesson. You can learn more about
+                        // migration with Room in this blog post:
+                        // https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
+                        .fallbackToDestructiveMigration()
+                        .build()
                     // Assign INSTANCE to the newly created database.
                     INSTANCE = instance
                 }
@@ -103,4 +103,3 @@ abstract class clientesDataBase : RoomDatabase() {
         }
     }
 }
-*/

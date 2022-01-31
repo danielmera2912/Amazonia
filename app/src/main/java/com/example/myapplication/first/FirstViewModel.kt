@@ -1,20 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.first
 
-import android.os.CountDownTimer
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.*
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.myapplication.MainActivity.Companion.producto
-import com.example.myapplication.databinding.FragmentFirstBinding
 
 class FirstViewModel : ViewModel() {
 

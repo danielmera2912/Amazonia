@@ -66,23 +66,29 @@ class ThirdFragment : Fragment() {
                 binding.claRe.setVisibility(View.VISIBLE)
                 binding.iban.setVisibility(View.INVISIBLE)
                 binding.ibanRe.setVisibility(View.INVISIBLE)
+                /*
                 binding.buttonThird.setOnClickListener {
                     findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
                 }
-                /*
-                val textoUs= binding.usRe.getText().toString()
-                val textoCla= binding.claRe.getText().toString()
-                if (textoUs.isNullOrBlank() or textoCla.isNullOrBlank()){
-                    binding.buttonThird.setOnClickListener {
+*/
+                var textoUs=""
+                var textoCla= ""
+
+
+
+
+                binding.buttonThird.setOnClickListener {
+                    textoUs= binding.usRe.getText().toString()
+                    textoCla=binding.claRe.getText().toString()
+                    if(textoUs.length<2 || textoCla.length<2){
+                        findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
+                    }else{
                         findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
                     }
+
                 }
-                else{
-                    binding.buttonThird.setOnClickListener {
-                        findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
-                    }
-                }
-                */
+
+
 
 
             }
@@ -104,16 +110,21 @@ class ThirdFragment : Fragment() {
                 binding.usRe.setVisibility(View.INVISIBLE)
                 binding.cla.setVisibility(View.INVISIBLE)
                 binding.claRe.setVisibility(View.INVISIBLE)
+                var textoIBAN=""
                 binding.buttonThird.setOnClickListener {
-                    findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
+                    textoIBAN= binding.ibanRe.getText().toString()
+                    if(textoIBAN.length<2){
+                        findNavController().navigate(R.id.action_thirdFragment_to_fifthFragment,bundle)
+                    }else{
+                        findNavController().navigate(R.id.action_thirdFragment_to_fourthFragment,bundle)
+                    }
                 }
-
             }
         }
-}
-// cuando el fragmento se cierra
-override fun onDestroyView() {
-    super.onDestroyView()
-    _binding = null
-}
+    }
+    // cuando el fragmento se cierra
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

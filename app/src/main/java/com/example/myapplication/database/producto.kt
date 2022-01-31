@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
 package com.example.myapplication.database
-
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "clientes")
-data class clientes(
-        @PrimaryKey(autoGenerate = true)
-        var id: Long = 0L,
+@Entity(tableName = "producto")
+data class producto(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0L,
 
-        @ColumnInfo(name = "nombre")
-        val nombre: String ,
-
-        @ColumnInfo(name = "direccion")
-        var direccion: String ,
+    @ColumnInfo(name = "nombre")
+    var nombre: String
 
 )
-*/
